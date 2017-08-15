@@ -4,20 +4,20 @@
 ## Sua missão, caso deseje aceitá-la:
 A aplicação **SimplesVet Lite** está evoluindo e precisa de 3 novas funcionalidades:
 
-1. O animal está sem proprietário... =(  Crie um cadastro para `Proprietários`  com `Nome`, `email` e `telefone`; Depois atualize a tela de `Animais` para que ela receba o `Proprietário`
-2. O campo de raça, no cadastro de animal é um texto... pode isso, Arnaldo? Legal seria se tivesse uma tabela e no cadastro de animal fosse um ComboBox, Select ou algo similar com as raças cadastradas.
+1. O animal está sem proprietário... =(  Crie um cadastro para `Proprietários`  com `Nome`, `email` e `telefone`; Depois atualize a tela de `Animais` para que ela receba o `Proprietário` - OK
+2. O campo de raça, no cadastro de animal é um texto... pode isso, Arnaldo? Legal seria se tivesse uma tabela e no cadastro de animal fosse um ComboBox, Select ou algo similar com as raças cadastradas. - OK
 3. Os animais precisam ser vacinados!! Crie um lugar onde seja possível aplicar uma vacina para o animal (já tem tabela! Veja na sessão [*estrutura de dados*](#estrutura)).
 
 ## Alguns erros foram reportados pela equipe de encantadores
-1. O peso não está gravando corretamente as casas decimais
-2. Não está sendo possível atualizar um animal! O.O
+1. O peso não está gravando corretamente as casas decimais - OK
+2. Não está sendo possível atualizar um animal! O.O - OK
 
 ![missaoimpossivel4.gif](img/missaoimpossivel4.gif)
 
 ## Go further!
 Se quiser ir **além** e mostrar que *Tom Cruise* é licuri, aqui vão algumas coisas divertidas:
 
-1. A aplicação e a API estão sem controle de acesso... o.O
+1. A aplicação e a API estão sem controle de acesso... o.O - OK
 2. Seria legal ter upload da imagem do animal!
 
 Fique livre para propor/implementar outras novidades bacanas. Seja de funcionalidade ou estrutura de código.
