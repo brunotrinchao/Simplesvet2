@@ -6,15 +6,24 @@ class VacinaDao {
 
     /** @param Vacina $vacina */
     public function getAll($animal) {
-
+        $id_Ani = (!empty($animal->getAni_int_codigo()))? "WHERE ani_int_codigo = ". $animal->getAni_int_codigo() : "";
         $ret = array();
+        $filter = new GFilter();
         try {
             $mysql = new GDbMysql();
-            $mysql->execute("SELECT *  FROM vw_animal_vacina WHERE ani_int_codigo = ? ", array("i", $animal->getAni_int_codigo()), true, MYSQL_ASSOC);
-            
-            if ($mysql->fetch()) {
-                $ret = $mysql->res;
-                var_dump($ret);
+            $query = "SELECT *  FROM vw_animal_vacina  " . $id_Ani;
+            $param = $filter->getParam();
+    
+            $mysql->execute($query, $param);
+            $i = 0;
+            while ($mysql->fetch()) {
+                $ret[$i]['nav_int_codigo'] = $mysql->res['nav_int_codigo'];
+                $ret[$i]['ani_int_codigo'] = $mysql->res['ani_int_codigo'];
+                $ret[$i]['vac_int_codigo'] = $mysql->res['vac_int_codigo'];
+                $ret[$i]['usu_int_codigo'] = $mysql->res['usu_int_codigo'];
+                $ret[$i]['vac_var_nome'] = $mysql->res['vac_var_nome'];
+                $ret[$i]['usu_var_nome'] = $mysql->res['usu_var_nome'];
+                $i++;
             }
             $mysql->close();
         } catch (GDbException $e) {

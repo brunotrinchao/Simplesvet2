@@ -1,5 +1,6 @@
 <?php
 require_once("usuario.php");
+require_once("vacina.php");
 
 class UsuarioDao {
 

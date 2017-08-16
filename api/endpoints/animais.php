@@ -2,9 +2,9 @@
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
-use \Psr\Http\Message\UploadedFileInterface as UploadFile;
 
 require '_class/animalDao.php';
+
 
 $app->get('/animais/{ani_int_codigo}', function (Request $request, Response $response) {
     $ani_int_codigo = $request->getAttribute('ani_int_codigo');
@@ -32,6 +32,8 @@ $app->post('/animais', function (Request $request, Response $response) {
  	
     $data = AnimalDao::insert($animal);
     $code = ($data['status']) ? 201 : 500;
+
+    
 
 	return $response->withJson($data, $code);
 });

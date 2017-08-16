@@ -18,13 +18,24 @@ $htmlForm .= $form->addSelect('rac_int_cod', array(), '', 'Raça*', array('valid
 
 $htmlForm .= $form->addInput('text', 'ani_dec_peso', 'Peso*', array('maxlength' => '100', 'validate' => 'required'));
 
-
+$htmlForm .= $form->addSelect('vac_int_cod', array(), '', 'Vacinar', array(), false, false, true, '', 'Selecione...');
 //$htmlForm .= $form->addInput('file', 'ani_var_img', 'Imagem', array());
 //$htmlForm .= $form->addUploadFieldParam('ani_var_img', 'upload.php', 5000, 'foto', 'upload', 'ani_var_img');
 //$htmlForm .= '<div id="foto"></div>';
 
-
-
+$htmlForm .= '<div>';
+$htmlForm .=  $form->addLabel('vacinas', 'Vacinas');
+$htmlForm .= '<table class="table table-striped table-hover">';
+$htmlForm .= '<thead>';
+$htmlForm .= '<tr>';
+$htmlForm .= '<th width="80%">Nome</th>';
+$htmlForm .= '<th>Aplicado por:</th>';
+$htmlForm .= '</tr>';
+$htmlForm .= '</thead>';
+$htmlForm .= '<tbody id="lista-vacina">';
+$htmlForm .= '</tbody>';
+$htmlForm .= '</table>';
+$htmlForm .= '</div>';
 $htmlForm .= '<div class="form-actions">';
 $htmlForm .= getBotoesAcao(true);
 $htmlForm .= '</div>';

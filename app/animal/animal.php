@@ -72,7 +72,15 @@ $footer->show();
             unselectLines();
             getAllSelect('proprietarios', 'pro_int_cod');
             getAllSelect('racas', 'rac_int_cod');
-
+            /*$.gAjax.exec('GET', URL_API + 'vacinas/' + ani_int_codigo, false, false, function(json) {
+                    console.log(json);
+                    $.each(json, function( i, val ) {
+                        
+                        $('#lista-vacina').append('<tr><th>'+val.vac_var_nome+'</th><th>'+val.usu_var_nome+'</th></tr>');
+                        
+                    });
+                    
+                });*/
             showForm('divForm', 'ins', 'Adicionar');
         });
 
@@ -89,7 +97,25 @@ $footer->show();
                 getAllSelect('proprietarios', 'pro_int_cod', json.pro_int_codigo);
                 getAllSelect('racas', 'rac_int_cod', json.rac_int_codigo);
 
-                
+                $.gAjax.exec('GET', URL_API + 'vacinas/' + ani_int_codigo, false, false, function(json) {
+                    console.log(json);
+                    $.each(json, function( i, val ) {
+                        
+                        $('#lista-vacina').append('<tr><th>'+val.vac_var_nome+'</th><th>'+val.usu_var_nome+'</th></tr>');
+                        
+                    });
+                    
+                });
+
+                /*$.gAjax.exec('GET', URL_API + 'vacinas', false, false, function(json) {
+                    console.log(json);
+                    $.each(json, function( i, val ) {
+                        
+                        $('#vac_int_cod').append('<option value="'+val.vac_int_codigo+'">'+val.vac_var_nome+'</option>');
+                        
+                    });
+                    
+                });*/
 
                 showForm('divForm', 'upd', 'Editar');
             });
