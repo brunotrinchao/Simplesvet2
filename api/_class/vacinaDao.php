@@ -1,5 +1,4 @@
 <?php
-require_once("animal.php");
 require_once("vacina.php");
 
 class VacinaDao {
