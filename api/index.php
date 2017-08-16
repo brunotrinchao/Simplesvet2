@@ -15,6 +15,5 @@ require 'endpoints/proprietarios.php';
 require 'endpoints/animais.php';
 require 'endpoints/racas.php';
 require 'endpoints/login.php';
-require 'endpoints/vacinas.php';
 
 $app->run();
